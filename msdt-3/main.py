@@ -3,7 +3,7 @@ import re
 from checksum import calculate_checksum, serialize_result
 from typing import List, Generator
 
-VARIANT = 73
+VARIANT = 77
 
 
 class DataValidator:
