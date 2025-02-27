@@ -58,7 +58,7 @@ def get_invalid_row_indices(data_rows: Generator[List[str], None, None],
 
 
 if __name__ == "__main__":
-    file_path = "73.csv"
+    file_path = "77.csv"
     encodings_to_try = ["utf-16", "utf-8", "windows-1251"]
     validator = DataValidator()
 
