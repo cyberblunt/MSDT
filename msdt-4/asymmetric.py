@@ -11,12 +11,10 @@ logger = setup_logger(__name__)
 class Asymmetric:
     """
     A class that implements asymmetric encryption and decryption using the RSA algorithm.
-
     Attributes
         private_key: The private key.
         public_key: The public key.
     """
-
     def __init__(self):
         self.private_key = None
         self.public_key = None
@@ -37,7 +35,6 @@ class Asymmetric:
     def serialization_public(self, public_path: str) -> None:
         """
         Serializes the RSA public key to files.
-
         Parameters
             public_path: The path to the file where the public key will be saved.
         """
@@ -49,13 +46,14 @@ class Asymmetric:
             logger.info(f"Public key successfully written to file: {public_path}")
         except FileNotFoundError:
             logger.error(f"File not found: {public_path}")
+            print(f"The file '{public_path}' was not found.")
         except Exception as e:
             logger.error(f"Error during public key serialization: {str(e)}")
+            print(f"Error: {str(e)}")
 
     def serialization_private(self, private_path: str) -> None:
         """
         Serializes the RSA private key to files.
-
         Parameters
             private_path: The path to the file where the private key will be saved.
         """
@@ -68,13 +66,14 @@ class Asymmetric:
             logger.info(f"Private key successfully written to file: {private_path}")
         except FileNotFoundError:
             logger.error(f"File not found: {private_path}")
+            print(f"The file '{private_path}' was not found.")
         except Exception as e:
             logger.error(f"Error during private key serialization: {str(e)}")
+            print(f"Error: {str(e)}")
 
     def public_key_deserialization(self, public_path: str) -> None:
         """
         Deserializes the RSA public key from a file.
-
         Parameters
             public_path: The path to the file containing the public key.
         """
@@ -86,13 +85,14 @@ class Asymmetric:
             logger.info(f"Public key successfully deserialized from: {public_path}")
         except FileNotFoundError:
             logger.error(f"File not found: {public_path}")
+            print(f"The file '{public_path}' was not found.")
         except Exception as e:
             logger.error(f"Error during public key deserialization: {str(e)}")
+            print(f"Error: {str(e)}")
 
     def private_key_deserialization(self, private_path: str) -> None:
         """
         Deserializes the RSA private key from a file.
-
         Parameters
             private_path: The path to the file containing the private key.
         """
@@ -104,13 +104,14 @@ class Asymmetric:
             logger.info(f"Private key successfully deserialized from: {private_path}")
         except FileNotFoundError:
             logger.error(f"File not found: {private_path}")
+            print(f"The file '{private_path}' was not found.")
         except Exception as e:
             logger.error(f"Error during private key deserialization: {str(e)}")
+            print(f"Error: {str(e)}")
 
     def encrypt(self, symmetric_key: bytes) -> bytes:
         """
         Encrypts a symmetric key using the public key.
-
         Parameters
             symmetric_key (bytes): The symmetric key to be encrypted.
         Returns
@@ -126,7 +127,6 @@ class Asymmetric:
     def decrypt(self, symmetric_key: bytes) -> bytes:
         """
         Decrypts a symmetric key using the private key.
-
         Parameters
             symmetric_key (bytes): The encrypted symmetric key to be decrypted.
         Returns
